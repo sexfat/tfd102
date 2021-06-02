@@ -5,6 +5,15 @@ body{
 section {
     width: 100vw;
     height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 3px;
+}
+
+.gray {
+    background-color: rgb(225, 225, 225);
 }
 
 .box {
