@@ -65,8 +65,9 @@
             rotation: 180,//旋轉
             repeat : 1 //重複播放
         })
-        TweenMax.to('.mv5', 1, {
+        TweenMax.to('.mv5', 10, {
             rotation: 360,//旋轉
+            transformOrigin : '400px 400px', // 改變軸心位址，在物件的外面
             repeat : -1, //重複播放
             ease: Power0.easeNone // 補間動畫歸零
         })
@@ -156,6 +157,8 @@
             className: "+=text",
             ease : Elastic.easeOut
         })
+
+
         
         
 
