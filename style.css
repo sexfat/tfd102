@@ -2,6 +2,10 @@ body{
     background-color: rgb(41, 41, 41);
     color: #fff;
 }
+section {
+    width: 100vw;
+    height: 100vh;
+}
 
 .box {
     width: 80px;
@@ -12,6 +16,10 @@ body{
     box-sizing: border-box;
     background-color: rgb(0, 255, 170);
 }
+.wide {
+    width:300px;
+}
+
 
 .text1 {
     text-align: center;
