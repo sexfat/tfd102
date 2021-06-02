@@ -9,7 +9,39 @@
     <title>control option</title>
 </head>
 <body>
+   <button id="play">play</button>
+   <button id="pause">pause</button>
+   <div class="box mvbox">物件</div>   
+   <script>
+       // 按鈕
+       var btnPlay = document.getElementById('play');
+       var btnPause = document.getElementById('pause');
+       
+       // 動畫
+       var tl = new TimelineMax({
+           repeat: -1
+       });
+       tl.to('.mvbox' , 1 , {
+           x: 400,
+           y: 300
+       }).to('.mvbox' , 1 , {
+           rotation : 360
+       })
+       // 先讓動畫停止
+       tl.stop();
+        
+       // 播放
+       btnPlay.addEventListener('click' , function(){
+        tl.play();
+       })
+       // 暫停
+       btnPause.addEventListener('click' , function(){
+        tl.pause();
+       })
 
-    
+
+
+
+   </script>
 </body>
 </html>

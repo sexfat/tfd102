@@ -30,3 +30,8 @@ section {
     height: 300px;
     border-radius: 30%;
 }
+button {
+    cursor: pointer;
+    width: 150px;
+     height: 40px;
+}
