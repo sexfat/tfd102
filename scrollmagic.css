@@ -1,6 +1,7 @@
 body{
     background-color: rgb(41, 41, 41);
     color: #fff;
+    overflow-x: hidden;
 }
 section {
     width: 100vw;
@@ -32,3 +33,19 @@ section {
 .on {
     background-color: rgb(255, 250, 115);
 }
+
+.scene_04 {
+    background-image: url("https://placem.at/person");
+    background-size: cover; 
+    display: initial;
+}
+
+.scene_04 .rect {
+    width: 100vw;
+    height: 25vh;
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 20px;
+    background-color: #d7ff7a;  
+}
+
