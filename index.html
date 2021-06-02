@@ -101,7 +101,7 @@
 
         // TimelineMax 時間軸動畫
         var tl = new TimelineMax({
-            repeat: 2,
+            repeat: 1,
             repeatDelay: 1,
             yoyo: true, //動畫順序1-2-2-1
             onComplete : alerts // callback
@@ -153,6 +153,7 @@
             y: 300,
             width: 300 ,
             height: 300,
+            className: "+=text",
             ease : Elastic.easeOut
         })
         
