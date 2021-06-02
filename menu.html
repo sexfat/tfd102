@@ -18,14 +18,15 @@
         //動畫
         var tlmenu = new TimelineMax();
         
-        var top_mv = TweenMax.to('.top' , 1 , {
+        var top_mv = TweenMax.to('.top' , .3 , {
             y: '11px',
             rotation: 45 
         })
-        var middle_mv = TweenMax.to('.middle' , 1 , {
-            opacity : 0 
+        var middle_mv = TweenMax.to('.middle' , .1 , {
+            opacity : 0 ,
+            x: 100
         })
-        var bottom_mv = TweenMax.to('.bottom' , 1 , {
+        var bottom_mv = TweenMax.to('.bottom' , .3 , {
             rotation: -45,
             y: '-11px'
         })
