@@ -11,11 +11,13 @@
 <body>
    <button id="play">play</button>
    <button id="pause">pause</button>
+   <button id="reverse">reverse</button>
    <div class="box mvbox">物件</div>   
    <script>
        // 按鈕
        var btnPlay = document.getElementById('play');
        var btnPause = document.getElementById('pause');
+       var btnReverse = document.getElementById('reverse');
        
        // 動畫
        var tl = new TimelineMax({
@@ -27,9 +29,11 @@
        }).to('.mvbox' , 1 , {
            rotation : 360
        })
+
+
        // 先讓動畫停止
        tl.stop();
-        
+       //==== 控制 
        // 播放
        btnPlay.addEventListener('click' , function(){
         tl.play();
@@ -38,6 +42,14 @@
        btnPause.addEventListener('click' , function(){
         tl.pause();
        })
+       btnPause.addEventListener('click' , function(){
+        tl.pause();
+       })
+       //時間反轉
+       btnReverse.addEventListener('click' , function(){
+        tl.reverse();
+       })
+
 
 
 
