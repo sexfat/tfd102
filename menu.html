@@ -34,6 +34,16 @@
        
         // 控制
         tlmenu.stop();
+
+        document.getElementById('nav').onmouseover = function(){
+            tlmenu.play();
+        }
+        document.getElementById('nav').onmouseleave = function(){
+            tlmenu.reverse();
+        }
+      
+
+        
         
 
         
