@@ -30,8 +30,7 @@
      <!-- timelinemax -->
      <div class="box mv10">010</div>
      <div class="box mv11">011</div>
-
-
+     <div class="box mv12">012</div>
 </section>
 
     <script>
@@ -140,6 +139,21 @@
         }).to('.mv11' , 1 , {
             x: 400,
             rotation: 180,
+        })
+
+     var tl2 = new TimelineMax()
+
+        tl2.set('.mv12' , {
+            backgroundColor: '#eee'
+        }).to('.mv12' , 1 , {
+            x: 500,
+            backgroundColor: '#f20',
+            borderRadius : '50%'
+        }).to('.mv12' , 1 ,{
+            y: 300,
+            width: 300 ,
+            height: 300,
+            ease : Elastic.easeOut
         })
         
         
