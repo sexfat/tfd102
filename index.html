@@ -102,8 +102,18 @@
 
         // TimelineMax 時間軸動畫
         var tl = new TimelineMax({
-            repeat: 1
+            repeat: 2,
+            repeatDelay: 1,
+            yoyo: true, //動畫順序1-2-2-1
+            onComplete : alerts // callback
+
         });
+        
+        function alerts(){
+            //  alert('動畫完成');
+             console.log('finish');
+         }
+
         
         // tl.to('.mv10' , 1 , {
         //     x: 100,
