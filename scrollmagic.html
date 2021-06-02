@@ -70,13 +70,18 @@
 
 
     // 第二個場景
+    var tl_mv02 = TweenMax.to('.mv02' , 1 ,{
+       x: 300 
+    }) 
+
+
     new ScrollMagic.Scene({
          triggerElement: '#keypoint02',
          //offset : 250, // 場景觸發點
          triggerHook : 0, // 瀏覽器觸發點
-         //duration : 400  
+         duration : 400  
 
-    }).setClassToggle('.scene_03' , 'on').addIndicators().addTo(controller);
+    }).setClassToggle('.scene_03' , 'on').setTween(tl_mv02).addIndicators().addTo(controller);
 
 </script>
 

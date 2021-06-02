@@ -25,6 +25,10 @@ section {
     box-sizing: border-box;
     background-color: rgb(0, 255, 170);
 }
+
+.scene_03 {
+    transition: .5s all ease-in-out;
+}
 .on {
     background-color: rgb(255, 250, 115);
 }
