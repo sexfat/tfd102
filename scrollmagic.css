@@ -6,11 +6,10 @@ body{
 section {
     width: 100vw;
     height: 100vh;
-
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    letter-spacing: 3px;
+    letter-spacing: 3px; */
 }
 
 .gray {
@@ -30,6 +29,8 @@ section {
 .scene_03 {
     transition: .5s all ease-in-out;
 }
+
+
 .on {
     background-color: rgb(255, 250, 115);
 }
@@ -41,11 +42,16 @@ section {
 }
 
 .scene_04 .rect {
-    width: 100vw;
-    height: 25vh;
-    position: relative;
-    margin-bottom: 5px;
-    font-size: 20px;
-    background-color: #d7ff7a;  
+  width: 100vw;
+  height: 25vh;
+  position: relative;
+  margin-bottom: 5px;
+  font-size: 20px;
+  background-color: #ceff7a;
 }
+
+/* .scene_05 , .scene_06 {
+    display: block;
+} */
+
 
