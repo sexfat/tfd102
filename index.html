@@ -27,6 +27,11 @@
     <div class="box  mv9">009</div>
     <div class="box  mv9">009</div>
     <div class="box  mv9">009</div>
+     <!-- timelinemax -->
+     <div class="box mv10">010</div>
+     <div class="box mv11">011</div>
+
+
 </section>
 
     <script>
@@ -90,9 +95,46 @@
         //     // repeat: -1,
         //     boxShadow : '4px 4px 60px #fff' // 陰影
         // })
-        TweenMax.staggerTo('.mv9' , 1 , {
+        TweenMax.staggerFrom('.mv9' , 1 , {
             x: 300
         },1)
+
+
+        // TimelineMax 時間軸動畫
+        var tl = new TimelineMax({
+            repeat: 1
+        });
+        
+        // tl.to('.mv10' , 1 , {
+        //     x: 100,
+        //     scale: 2
+        // })
+        // tl.to('.mv10' , 1 , {
+        //     y: 100
+        // })
+        // tl.to('.mv10' , 1 , {
+        //     x: 400
+        // })
+        // tl.to('.mv11' , 1 , {
+        //     x: 400,
+        //     rotation: 180,
+        // })
+        //比較簡潔寫法
+         tl.to('.mv10' , 1 , {
+            x: 100,
+            scale: 2
+        }).to('.mv10' , 1 , {
+            y: 100
+        }).to('.mv10' , 1 , {
+            x: 400
+        }).to('.mv11' , 1 , {
+            x: 400,
+            rotation: 180,
+        })
+        
+        
+
+
 
 
 
