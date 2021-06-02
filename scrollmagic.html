@@ -27,6 +27,7 @@
     <div id="keypoint02"></div>
     <section  class="scene_03">
         <div class="box mv02">obj02</div>
+        <div class="box mv03">obj03</div>
     </section>
     <section class="scene_04 gray"></section>
 
@@ -73,6 +74,10 @@
     var tl_mv02 = TweenMax.to('.mv02' , 1 ,{
        x: 300 
     }) 
+    var tl_mv03 = TweenMax.to('.mv03' , 1 ,{
+       y: 300,
+       scale: 2 
+    }) 
 
 
     new ScrollMagic.Scene({
@@ -81,7 +86,7 @@
          triggerHook : 0, // 瀏覽器觸發點
          duration : 400  
 
-    }).setClassToggle('.scene_03' , 'on').setTween(tl_mv02).addIndicators().addTo(controller);
+    }).setClassToggle('.scene_03' , 'on').setTween([tl_mv02 , tl_mv03]).addIndicators().addTo(controller);
 
 </script>
 
