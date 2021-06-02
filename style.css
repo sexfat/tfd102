@@ -16,3 +16,9 @@ body{
 .text1 {
     text-align: center;
 }
+.mv5 {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 30%;
+}

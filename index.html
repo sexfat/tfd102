@@ -15,38 +15,55 @@
     <div class="box mv2">002</div>
     <div class="box mv3">003</div>
     <div class="box mv4">004</div>
+    <div class="box mv5">005</div>
+    <div class="box mv6">006</div>
     <div class="text text1">GSAP 2 動畫套件教學</div>
 
     <script>
         // code start
-        TweenMax.to('.mv1', 1, { 
+        TweenMax.to('.mv1', 1, {
             x: 200,
-            y: 100  
+            y: 100
         });
-        TweenMax.to('.mv2', 1, { 
+        TweenMax.to('.mv2', 1, {
             x: 400,
             y: 200,
-            delay : 1  
+            delay: 1
         });
-        TweenMax.from('.text1', 1, { 
-            y: -100, 
-            delay : 1.5,
-            opacity : 0    
+        TweenMax.from('.text1', 1, {
+            y: -100,
+            delay: 1.5,
+            opacity: 0
         });
 
         // TweenMax.fromTo('selector' , 秒數,{start},{end})
-        TweenMax.fromTo('.mv3' , 1 ,{
+        TweenMax.fromTo('.mv3', 1, {
             //起始位址
-              x: 100,
-        },{
+            x: 100,
+        }, {
             // 結束位址
-              x: 400,
-              delay : 1
+            x: 400,
+            delay: 1
         })
-        TweenMax.to('.mv4'  , 1 , {
-           x: 100,
-           scale: 1.5, //放大
-           rotation : 180,//旋轉 
+        TweenMax.to('.mv4', 1, {
+            x: 200,
+            scale: 2, //放大
+            rotation: 180,//旋轉
+            repeat : 1 //重複播放
+        })
+        TweenMax.to('.mv5', 1, {
+            rotation: 360,//旋轉
+            repeat : -1, //重複播放
+            ease: Power0.easeNone // 補間動畫歸零
+        })
+        //補間動畫
+        TweenMax.to('.mv6', 2, {
+            x: 600,
+            scale: 2,
+            backgroundColor: '#f20', //背景色         
+            // ease: Power4.easeOut // 補間動畫
+            // ease : Back.easeOut
+            ease : Elastic.easeOut
         })
 
 
