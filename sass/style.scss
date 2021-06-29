@@ -111,6 +111,77 @@ a {
 @import 'font.css'; // 原生css
 
 
+// 函式
+// function name() { }
+
+// 宣告方式
+@mixin font($size){
+    font-size: $size;
+    font-weight: 300;
+
+}
+
+
+@mixin margintop($val) {
+    margin-top: $val;
+    margin-bottom:  $val * 2;
+    @include font(14px);
+}
+
+@mixin marginAuto(){
+    margin: 0 auto;
+}
+
+
+//呼叫函式
+
+.box {
+   @include margintop(50px); 
+   @include marginAuto()
+}
+ .box01 {
+     @include margintop(10px);
+ }
+
+// 預設值
+ @mixin rect($w: 100px , $h:100px , $bgc:#fff){
+     width:  $w;
+     height: $h;
+     background-color: $bgc;
+ }
+
+@mixin rect_new($w , $h:$w){
+    width:  $w;
+    height: $h;
+}
+
+
+ .box_rect {
+    @include rect(200px , 300px , #f7c4c4);
+ }
+
+ .box_rects {
+     @include rect_new(100vw , 100vh)
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
