@@ -1,17 +1,53 @@
+@charset "UTF-8";
+.title {
+  font-size: 48px;
+}
+
+.title::after {
+  content: "文字";
+  display: block;
+}
+
 body {
-  padding: auto;
   background-color: #f7c4c4;
+  font-size: 18px;
+  margin: 10px 20px 10px;
 }
 
-.wrapper {
-  width: 1200px;
-  margin: 20px 20px;
-  padding: 0;
+h1 {
+  font-size: 48px;
 }
 
-.box {
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+header {
+  height: 120px;
+  width: 100%;
+}
+
+.modal {
+  width: 100px;
+}
+
+body .container header {
+  height: 120px;
+}
+body .container header .logo {
   width: 100px;
   height: 100px;
+}
+body .container footer {
+  height: 300px;
 }
 
 /*# sourceMappingURL=style.css.map */
