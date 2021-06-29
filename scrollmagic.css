@@ -38,7 +38,7 @@ section {
 .scene_04 {
     background-image: url("https://placem.at/person");
     background-size: cover; 
-    display: initial;
+    /* display: initial; */
 }
 
 .scene_04 .rect {

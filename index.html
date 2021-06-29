@@ -27,6 +27,7 @@
     <div class="box  mv9">009</div>
     <div class="box  mv9">009</div>
     <div class="box  mv9">009</div>
+    <div class="box  mv91">0091</div>
      <!-- timelinemax -->
      <div class="box mv10">010</div>
      <div class="box mv11">011</div>
@@ -95,7 +96,7 @@
         //     // repeat: -1,
         //     boxShadow : '4px 4px 60px #fff' // 陰影
         // })
-        TweenMax.staggerFrom('.mv9' , 1 , {
+        TweenMax.staggerFrom(['.mv9', '.mv91' ], 1 , {
             x: 300
         },1)
 
