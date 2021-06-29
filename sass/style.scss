@@ -148,16 +148,18 @@ a {
 }
 
 
-.btn-default{
-    @include btn(120px, 10px, false, rgb(42, 94, 12));
+.btn-default {
+    @include btn(120px, 10px, false, rgb(195, 246, 165));
 }
 
 
 
-@include textbox('.text' , 20px){
-   font-size: 20px;
-   color:rgb(139, 255, 67) 
-};
+@include textbox('.text', 20px) {
+    font-size: 20px;
+    color: rgb(139, 255, 67)
+}
+
+;
 
 // 字串轉型
 $fontclass : '.aa'; // class
@@ -180,14 +182,14 @@ $path: aa; // 路徑
 
 
 
-$var : 10 ; 
+$var : 10;
 
 
 .aa {
     width: $var + 10;
-    height : 10 - 4 + px;
-    margin: 10px * 5; 
-    font:  ceil(24 / 18) + px  ;
+    height: 10 - 4 + px;
+    margin: 10px * 5;
+    font: ceil(24 / 18) + px;
 }
 
 
@@ -195,13 +197,17 @@ $var : 10 ;
 $w : 20;
 
 .bb {
-  @if $w <= 50 {
-     width:  $w + px; 
-  } @else if $w <= 70  {
-    width:  ( $w /2 ) + px;
-  } @else {
-     width: $w * 2 + px;  
-  } 
+    @if $w <=50 {
+        width: $w + px;
+    }
+
+    @else if $w <=70 {
+        width: ($w /2) + px;
+    }
+
+    @else {
+        width: $w * 2 + px;
+    }
 }
 
 
@@ -211,28 +217,31 @@ $w : 20;
 
 @for $i from 1 through 10 {
     .box-#{$i} {
-        width:  $i * 1px;
+        width: $i * 1px;
     }
 }
 
 // 運用
-@mixin push($num){
+@mixin push($num) {
     @for $i from 1 through $num {
         .push-left-#{$i} {
             position: relative;
-            left : $i * 1px
+            left: $i * 1px
         }
-        .push-top-#{$i}{
+
+        .push-top-#{$i} {
             position: relative;
-            top : $i * 1px 
+            top: $i * 1px
         }
-        .push-bottom-#{$i}{
+
+        .push-bottom-#{$i} {
             position: relative;
-            bottom : $i * 1px 
+            bottom: $i * 1px
         }
-        .push-right-#{$i}{
+
+        .push-right-#{$i} {
             position: relative;
-            right : $i * 1px 
+            right: $i * 1px
         }
     }
 }
@@ -240,25 +249,43 @@ $w : 20;
 // @include push(100);
 
 
-@mixin pushall($num , $dir){
+@mixin pushall($num, $dir) {
     @for $i from 1 through $num {
         .push-#{$dir}-#{$i} {
             position: relative;
-            #{$dir} : $i * 1px;
+            #{$dir}: $i * 1px;
             @content;
         }
+    }
+}
+
+
+// @include pushall(100, top){
+//     display: block
+// };
+// @include pushall(200, bottom);
+
+// grid system
+@mixin grid($col){
+    @for $i from 1 through $col {
+        .col-#{$i}{
+          width: ( $i / $col ) * 100% ;
+          @content;
+        } 
     }
 } 
 
 
-@include pushall(100, top){
-    display: block
-};
-@include pushall(200, bottom);
 
+.row {
+    display: flex;
+    // .col-1 {
+    //     width: (1/12) * 100%;
+    // }
+    // .col-2 {
+    //     width: (2/12) * 100%;
+    // }
+    @include grid(24){
+    };
 
-
-
-
-
-
+}
