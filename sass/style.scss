@@ -142,8 +142,6 @@ a {
 
 
 // null 
-
-
 .btn-wide {
     @include btn(150px, 10px, true, rgb(255, 174, 155));
     margin-bottom: 10px;
@@ -160,5 +158,16 @@ a {
    font-size: 20px;
    color:rgb(139, 255, 67) 
 };
+
+// 字串轉型
+$fontclass : '.aa'; // class
+$attr : margin; // 屬性
+$path: aa; // 路徑
+
+#{$fontclass} {
+    #{$attr}: 40px;
+    background-image: url('./images/#{$path}.jpg');
+}
+
 
 

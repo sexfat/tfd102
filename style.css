@@ -132,4 +132,9 @@ a::before {
   color: #8bff43;
 }
 
+.aa {
+  margin: 40px;
+  background-image: url("./images/aa.jpg");
+}
+
 /*# sourceMappingURL=style.css.map */
