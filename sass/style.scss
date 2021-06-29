@@ -2,7 +2,7 @@
 @import 'header'; // sass 
 
 // @import url('font.css');
-@import 'font.css'; // 原生css
+@import url('font.css'); // 原生css
 @import 'mixin';
 
 
@@ -169,5 +169,39 @@ $path: aa; // 路徑
     background-image: url('./images/#{$path}.jpg');
 }
 
+
+
+// 運算  （注意單位） + 運算函式
+
+
+// floor(14.58px); // 14px 無條件捨去 
+// width: round(14.58px); // 15px 四捨五入
+// height: ceil(14.38px); // 15px 無條件進位
+
+
+
+$var : 10 ; 
+
+
+.aa {
+    width: $var + 10;
+    height : 10 - 4 + px;
+    margin: 10px * 5; 
+    font:  ceil(24 / 18) + px  ;
+}
+
+
+// 判斷式
+$w : 20;
+
+.bb {
+  @if $w <= 50 {
+     width:  $w + px; 
+  } @elseif $w <= 70  {
+    width:  ( $w /2 ) + px;
+  } @else {
+     width: $w * 2 + px;  
+  } 
+}
 
 

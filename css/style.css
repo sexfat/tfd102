@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import 'font.css';
+@import url("font.css");
 header {
   height: 120px;
   width: 100%;
@@ -10,7 +10,7 @@ header {
 }
 
 .title::after {
-  content: "文字";
+  content: '文字';
   display: block;
 }
 
@@ -48,10 +48,12 @@ header {
 body .container header {
   height: 120px;
 }
+
 body .container header .logo {
   width: 100px;
   height: 100px;
 }
+
 body .container footer {
   height: 300px;
 }
@@ -59,14 +61,17 @@ body .container footer {
 a {
   color: #f20;
 }
+
 a:hover {
   color: #c61a00;
 }
+
 a::after {
-  content: "content";
+  content: 'content';
 }
+
 a::before {
-  content: "before";
+  content: 'before';
 }
 
 .box {
@@ -105,6 +110,7 @@ a::before {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+
 .btn-wide:hover {
   color: #fff;
   background-color: #ff5b35;
@@ -118,6 +124,7 @@ a::before {
   border: 1px solid #000;
   background-color: #8bff43;
 }
+
 .btn-default:hover {
   color: #fff;
   background-color: #54dc00;
@@ -137,4 +144,14 @@ a::before {
   background-image: url("./images/aa.jpg");
 }
 
+.aa {
+  width: 20;
+  height: 6px;
+  margin: 50px;
+  font: 2px;
+}
+
+.bb {
+  width: 20px;
+}
 /*# sourceMappingURL=style.css.map */
