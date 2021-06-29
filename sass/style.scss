@@ -1,3 +1,11 @@
+// @import 引入其他資源
+@import 'header'; // sass 
+
+// @import url('font.css');
+@import 'font.css'; // 原生css
+@import 'mixin';
+
+
 
 
 // 變數 > 型態
@@ -11,16 +19,14 @@ $h5: 18px;
 $bgc : #f7c4c4; //顏色
 $fontfamily : '微軟正黑'; // 字串
 $list : 10px 20px 10px; //list 
-$map : (
-  'key' : 'value',
-  'h1' : 48px   
-); // map
+$map : ('key' : 'value',
+    'h1' : 48px); // map
 $boolean : true; // 布林值
 $null : null; // null 把屬性刪掉
 
 
 .title {
-    font-size: map-get($map , h1 );
+    font-size: map-get($map, h1);
     background-color: $null;
 }
 
@@ -32,7 +38,7 @@ $null : null; // null 把屬性刪掉
 body {
     background-color: $bgc;
     font-size: $fontSize;
-    margin : $list;
+    margin: $list;
 }
 
 h1 {
@@ -46,12 +52,13 @@ h2 {
 h3 {
     font-size: $h3;
 }
+
 h4 {
     font-size: $h4;
 }
 
 header {
-    height:  $headerH;
+    height: $headerH;
     width: 100%;
 }
 
@@ -59,10 +66,10 @@ header {
 
 //==== 全域變數
 
-$width : 100px; 
+$width : 100px;
 
 .modal {
-    $width : 20px !default ; // 區域變數
+    $width: 20px !default; // 區域變數
     width: $width;
 }
 
@@ -70,12 +77,14 @@ $width : 100px;
 body {
     .container {
         header {
-           height: 120px;
-           .logo {
-               width: 100px;
-               height: 100px;
-           }
+            height: 120px;
+
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
         }
+
         footer {
             height: 300px;
         }
@@ -91,115 +100,65 @@ body {
 
 
 a {
-   color : #f20;
-   &:hover {
-       color: #c61a00;
-   }
-   &::after{
-       content: 'content';
-   }
-   &::before {
-       content: 'before'
-   }
-}
+    color: #f20;
 
+    &:hover {
+        color: #c61a00;
+    }
 
-// @import 引入其他資源
-@import 'header'; // sass 
+    &::after {
+        content: 'content';
+    }
 
-// @import url('font.css');
-@import 'font.css'; // 原生css
-
-
-// 函式
-// function name() { }
-
-// 宣告方式
-@mixin font($size){
-    font-size: $size;
-    font-weight: 300;
-
-}
-
-
-@mixin margintop($val) {
-    margin-top: $val;
-    margin-bottom:  $val * 2;
-    @include font(14px);
-}
-
-@mixin marginAuto(){
-    margin: 0 auto;
+    &::before {
+        content: 'before'
+    }
 }
 
 
 //呼叫函式
 
 .box {
-   @include margintop(50px); 
-   @include marginAuto()
+    @include margintop(50px);
+    @include marginAuto()
 }
- .box01 {
-     @include margintop(10px);
- }
 
-// 預設值
- @mixin rect($w: 100px , $h:100px , $bgc:#fff){
-     width:  $w;
-     height: $h;
-     background-color: $bgc;
- }
-
-@mixin rect_new($w , $h:$w){
-    width:  $w;
-    height: $h;
+.box01 {
+    @include margintop(10px);
 }
 
 
- .box_rect {
-    @include rect(200px , 300px , #f7c4c4);
- }
-
- .box_rects {
-     @include rect_new(100vw , 100vh)
- }
 
 
 
 
+.box_rect {
+    @include rect(200px, 300px, #f7c4c4);
+}
+
+.box_rects {
+    @include rect_new(100vw, 100vh)
+}
+
+
+// null 
+
+
+.btn-wide {
+    @include btn(150px, 10px, true, rgb(255, 174, 155));
+    margin-bottom: 10px;
+}
+
+
+.btn-default{
+    @include btn(120px, 10px, false, rgb(139, 255, 67));
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@include textbox('.text' , 20px){
+   font-size: 20px;
+   color:rgb(139, 255, 67) 
+};
 
 
