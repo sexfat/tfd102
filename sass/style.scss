@@ -1,4 +1,4 @@
-// @import 'header';
+
 
 // 變數 > 型態
 $fontSize : 18px; //數值
@@ -66,11 +66,7 @@ $width : 100px;
     width: $width;
 }
 
-// body .wrapper header {
-// }
-// body .wrapper footer {
-// }
-
+// ============ nesting =============
 body {
     .container {
         header {
@@ -85,6 +81,39 @@ body {
         }
     }
 }
+
+// a {
+//     color : #f20;
+// }
+// a:hover {
+//    color :  #c61a00
+// }
+
+
+a {
+   color : #f20;
+   &:hover {
+       color: #c61a00;
+   }
+   &::after{
+       content: 'content';
+   }
+   &::before {
+       content: 'before'
+   }
+}
+
+
+// @import 引入其他資源
+@import 'header'; // sass 
+
+// @import url('font.css');
+@import 'font.css'; // 原生css
+
+
+
+
+
 
 
 

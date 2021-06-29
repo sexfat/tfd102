@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import 'font.css';
 .title {
   font-size: 48px;
 }
@@ -48,6 +49,24 @@ body .container header .logo {
 }
 body .container footer {
   height: 300px;
+}
+
+a {
+  color: #f20;
+}
+a:hover {
+  color: #c61a00;
+}
+a::after {
+  content: "content";
+}
+a::before {
+  content: "before";
+}
+
+header {
+  height: 120px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
