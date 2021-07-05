@@ -1,3 +1,6 @@
+// base
+@import 'var';
+
 // @import 引入其他資源
 @import 'header'; // sass 
 
@@ -8,22 +11,7 @@
 
 
 
-// 變數 > 型態
-$fontSize : 24px; //數值
-$headerH : 120px;
-$h1: 48px;
-$h2: 40px;
-$h3: 36px;
-$h4: 24px;
-$h5: 18px;
-$bgc : #2a005b; //顏色
-$fontcolor : rgb(255, 255, 255);
-$fontfamily : '微軟正黑'; // 字串
-$list : 10px 20px 10px; //list 
-$map : ('key' : 'value',
-    'h1' : 48px); // map
-$boolean : true; // 布林值
-$null : null; // null 把屬性刪掉
+
 
 
 .title {
@@ -313,40 +301,12 @@ $imgname : slider1 slider2 slider3;
 // $m : 10px auto; list
 $null : null;
 
-$title_h :('h1' : 48px,
-    'h2' : 40px,
-    'h3' : 36px,
-    'h4' : 30px,
-    'h5' : 24px); // map
 
 
-@include title_module($title_h){
+
+@include title_module($title_h) {
     color: #333;
-};
-
-
-$color-map :(
-   'primary' : #028df7,
-   'secondary' : #a5a5a5, 
-   'success' : #00dd12, 
-   'danger' : #a90000, 
-   'warning' : #e9ff20,
-   'info'  : rgb(113, 175, 255) 
-);
-
-
-@each $k , $v in $color-map {
-    .text-#{$k} {
-        color : $v;
-        background-color:#000;
-        padding: 10px 20px;
-        transition: .2s all ease-in-out;
-        cursor: pointer;
-        &:hover {
-            background-color: lighten(#000 , 20);
-        }
-    }
 }
 
-
-
+;
+@include colormap($color-map , #9da5a3);

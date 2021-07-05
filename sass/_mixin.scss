@@ -166,6 +166,24 @@
     }
 }
 
+//  color map   @include colormap(顏色map 對應);
+@mixin colormap($color-map , $bgc:#000) {
+
+    @each $k,$v in $color-map {
+        .text-#{$k} {
+            color: $v;
+            background-color: $bgc;
+            padding: 10px 20px;
+            transition: .2s all ease;
+            cursor: pointer;
+
+            &:hover {
+                background-color: lighten($bgc, 20);
+            }
+        }
+    }
+}
+
 
 
 

@@ -408,74 +408,74 @@ h5 {
 }
 
 .text-primary {
-  color: #028df7;
-  background-color: #000;
+  color: #005da3;
+  background-color: #9da5a3;
   padding: 10px 20px;
-  transition: .2s all ease-in-out;
+  transition: .2s all ease;
   cursor: pointer;
 }
 
 .text-primary:hover {
-  background-color: #333333;
+  background-color: #d2d6d5;
 }
 
 .text-secondary {
-  color: #a5a5a5;
-  background-color: #000;
+  color: #d0d0d0;
+  background-color: #9da5a3;
   padding: 10px 20px;
-  transition: .2s all ease-in-out;
+  transition: .2s all ease;
   cursor: pointer;
 }
 
 .text-secondary:hover {
-  background-color: #333333;
+  background-color: #d2d6d5;
 }
 
 .text-success {
-  color: #00dd12;
-  background-color: #000;
+  color: #009b0d;
+  background-color: #9da5a3;
   padding: 10px 20px;
-  transition: .2s all ease-in-out;
+  transition: .2s all ease;
   cursor: pointer;
 }
 
 .text-success:hover {
-  background-color: #333333;
+  background-color: #d2d6d5;
 }
 
 .text-danger {
-  color: #a90000;
-  background-color: #000;
+  color: #ff0000;
+  background-color: #9da5a3;
   padding: 10px 20px;
-  transition: .2s all ease-in-out;
+  transition: .2s all ease;
   cursor: pointer;
 }
 
 .text-danger:hover {
-  background-color: #333333;
+  background-color: #d2d6d5;
 }
 
 .text-warning {
   color: #e9ff20;
-  background-color: #000;
+  background-color: #9da5a3;
   padding: 10px 20px;
-  transition: .2s all ease-in-out;
+  transition: .2s all ease;
   cursor: pointer;
 }
 
 .text-warning:hover {
-  background-color: #333333;
+  background-color: #d2d6d5;
 }
 
 .text-info {
   color: #71afff;
-  background-color: #000;
+  background-color: #9da5a3;
   padding: 10px 20px;
-  transition: .2s all ease-in-out;
+  transition: .2s all ease;
   cursor: pointer;
 }
 
 .text-info:hover {
-  background-color: #333333;
+  background-color: #d2d6d5;
 }
 /*# sourceMappingURL=style.css.map */
