@@ -16,7 +16,8 @@
 }
 
 @mixin marginAuto() {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right :auto;
 }
 
 
@@ -74,17 +75,6 @@
 } 
 
 
-@mixin pushall($num, $dir) {
-    @for $i from 1 through $num {
-        .push-#{$dir}-#{$i} {
-            position: relative;
-            #{$dir}: $i * 1px;
-            @content;
-        }
-    }
-}
-
-
 // 運用
 @mixin push($num) {
     @for $i from 1 through $num {
@@ -109,6 +99,29 @@
         }
     }
 }
+
+@mixin pushall($num, $dir) {
+    @for $i from 1 through $num {
+        .push-#{$dir}-#{$i} {
+            position: relative;
+            #{$dir}: $i * 1px;
+            @content;
+        }
+    }
+}
+
+
+@mixin margin($num, $dir){
+    @for $i from 1 through $num {
+        .margin-#{$dir}-#{$i} {
+           margin-#{$dir}: $i * 1px;
+         @content;
+        }
+    }
+}
+
+
+
 
 
 

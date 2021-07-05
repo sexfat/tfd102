@@ -248,3 +248,21 @@ $w : 20;
     };
 
 }
+
+
+// 呼叫 push
+
+// @include pushall(100 , top);
+// @include pushall(200 , left);
+// @include margin(100 , top){
+//      @include marginAuto();
+// };
+
+
+$img : box , a , b ;
+
+@each $a in $img {
+    .#{$a}{
+        background-image: url('./images/#{$a}.jpg');
+    }
+}
