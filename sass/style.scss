@@ -1,5 +1,39 @@
 // base
-@import 'var';
+@import 'base/reset';
+@import 'base/font';
+@import 'base/color';
+@import 'base/common';
+@import 'base/rwd';
+
+
+// mixin 
+
+@import 'mixin/mixin';
+
+
+// module
+@import 'module/btn';
+
+// layout
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/login';
+
+
+//page 
+@import  'page/index';
+@import  'page/about';
+@import  'page/game';
+@import  'page/contact';
+
+
+
+
+
+
+
+
+
 
 // @import 引入其他資源
 @import 'header'; // sass 
