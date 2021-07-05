@@ -156,6 +156,16 @@
     }    
 }
 
+// 標題h1 -h5 字體大小 @include title_module(map){屬性};
+@mixin title_module($title_h) {
+    @each $k,$v in $title_h {
+        #{$k} {
+            font-size: $v;
+            @content;
+        }
+    }
+}
+
 
 
 

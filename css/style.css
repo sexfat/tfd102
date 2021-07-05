@@ -384,21 +384,98 @@ a::before {
 
 h1 {
   font-size: 48px;
+  color: #333;
 }
 
 h2 {
   font-size: 40px;
+  color: #333;
 }
 
 h3 {
   font-size: 36px;
+  color: #333;
 }
 
 h4 {
   font-size: 30px;
+  color: #333;
 }
 
 h5 {
   font-size: 24px;
+  color: #333;
+}
+
+.text-primary {
+  color: #028df7;
+  background-color: #000;
+  padding: 10px 20px;
+  transition: .2s all ease-in-out;
+  cursor: pointer;
+}
+
+.text-primary:hover {
+  background-color: #333333;
+}
+
+.text-secondary {
+  color: #a5a5a5;
+  background-color: #000;
+  padding: 10px 20px;
+  transition: .2s all ease-in-out;
+  cursor: pointer;
+}
+
+.text-secondary:hover {
+  background-color: #333333;
+}
+
+.text-success {
+  color: #00dd12;
+  background-color: #000;
+  padding: 10px 20px;
+  transition: .2s all ease-in-out;
+  cursor: pointer;
+}
+
+.text-success:hover {
+  background-color: #333333;
+}
+
+.text-danger {
+  color: #a90000;
+  background-color: #000;
+  padding: 10px 20px;
+  transition: .2s all ease-in-out;
+  cursor: pointer;
+}
+
+.text-danger:hover {
+  background-color: #333333;
+}
+
+.text-warning {
+  color: #e9ff20;
+  background-color: #000;
+  padding: 10px 20px;
+  transition: .2s all ease-in-out;
+  cursor: pointer;
+}
+
+.text-warning:hover {
+  background-color: #333333;
+}
+
+.text-info {
+  color: #71afff;
+  background-color: #000;
+  padding: 10px 20px;
+  transition: .2s all ease-in-out;
+  cursor: pointer;
+}
+
+.text-info:hover {
+  background-color: #333333;
 }
 /*# sourceMappingURL=style.css.map */

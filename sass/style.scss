@@ -284,10 +284,10 @@ $imgname : slider1 slider2 slider3;
 
 
 .v1 {
-     @include layout(full ,400px);
-     @include theme(true);
-     margin-bottom: 100px;
-    
+    @include layout(full, 400px);
+    @include theme(true);
+    margin-bottom: 100px;
+
 }
 
 
@@ -295,7 +295,8 @@ $imgname : slider1 slider2 slider3;
 
 .wrapper {
     .banner {
-       @include layout(1200px, 500px);
+        @include layout(1200px, 500px);
+
         @include img($imgname, png) {
             background-color: #fff;
             background-repeat: no-repeat;
@@ -306,22 +307,46 @@ $imgname : slider1 slider2 slider3;
         }
     }
 }
+
 // $color: #f20
 // $a : 100px;
 // $m : 10px auto; list
 $null : null;
 
-$title_h :(
-   'h1' : 48px,
-   'h2' : 40px,
-   'h3' : 36px, 
-   'h4' : 30px, 
-   'h5' : 24px 
-); // map
+$title_h :('h1' : 48px,
+    'h2' : 40px,
+    'h3' : 36px,
+    'h4' : 30px,
+    'h5' : 24px); // map
 
 
-@each $k , $v in $title_h {
-    #{$k}{
-      font-size: $v;  
+@include title_module($title_h){
+    color: #333;
+};
+
+
+$color-map :(
+   'primary' : #028df7,
+   'secondary' : #a5a5a5, 
+   'success' : #00dd12, 
+   'danger' : #a90000, 
+   'warning' : #e9ff20,
+   'info'  : rgb(113, 175, 255) 
+);
+
+
+@each $k , $v in $color-map {
+    .text-#{$k} {
+        color : $v;
+        background-color:#000;
+        padding: 10px 20px;
+        transition: .2s all ease-in-out;
+        cursor: pointer;
+        &:hover {
+            background-color: lighten(#000 , 20);
+        }
     }
 }
+
+
+
