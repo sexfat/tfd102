@@ -296,15 +296,53 @@ a::before {
   width: 100%;
 }
 
-.box {
-  background-image: url("./images/box.jpg");
-}
-
 .a {
   background-image: url("./images/a.jpg");
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 80px;
 }
 
 .b {
   background-image: url("./images/b.jpg");
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 80px;
+}
+
+.c {
+  background-image: url("./images/c.jpg");
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 80px;
+}
+
+.d {
+  background-image: url("./images/d.jpg");
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 80px;
+}
+
+.banner {
+  background-image: url("./images/banner.jpg");
+  background-repeat: no-repeat;
+  width: 1200px;
+  height: 180px;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.banner2 {
+  background-image: url("./images/banner2.jpg");
+  background-repeat: no-repeat;
+  width: 1200px;
+  height: 180px;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 /*# sourceMappingURL=style.css.map */

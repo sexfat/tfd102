@@ -238,14 +238,16 @@ $w : 20;
 
 .row {
     display: flex;
+
     // .col-1 {
     //     width: (1/12) * 100%;
     // }
     // .col-2 {
     //     width: (2/12) * 100%;
     // }
-    @include grid(24){
-    };
+    @include grid(24) {}
+
+    ;
 
 }
 
@@ -259,10 +261,29 @@ $w : 20;
 // };
 
 
-$img : box , a , b ;
+// $img : box a b c bg; // list
 
-@each $a in $img {
-    .#{$a}{
-        background-image: url('./images/#{$a}.jpg');
+
+@mixin img($img) {
+    @each $a in $img {
+        .#{$a} {
+            background-image: url('./images/#{$a}.jpg');
+            background-repeat: no-repeat;
+            @content;
+        }
     }
+}
+
+@include img(a b c d){
+    width: 100px;
+    height: 80px;
+}
+
+
+@include img(banner  banner2){
+    width: 1200px;
+    height: 180px;
+    background-size: cover;
+    @include marginAuto();
+    position: relative;
 }
