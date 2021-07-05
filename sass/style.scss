@@ -11,6 +11,10 @@
 @import 'mixin/mixin';
 
 
+// 套件
+@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+
 // module
 @import 'module/btn';
 
@@ -28,7 +32,13 @@
 
 
 
+.gray {
+   background-color: rgb(194, 194, 194); 
+}
 
+.red {
+    background-color: rgb(247, 9, 9);
+}
 
 
 

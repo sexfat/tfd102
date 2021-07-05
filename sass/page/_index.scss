@@ -1,25 +1,10 @@
-body {
-    font-size: 30px;
-    background-color: rgb(151, 151, 151);
-    color: #000
-;}
-
-
-@include tablet(){
-    body {
-        font-size: 48px;
-        color:#f5ff33;
-        background-color: rgb(0, 50, 252) ;
-    }
-}
+@import 'index/desktop';
+@import 'index/tablet';
+@import 'index/moblie';
 
 
 
 
-@include moblie(){
-    body {
-        font-size: 48px;
-        color:#f20;
-        background-color: rgb(85, 255, 0) ;
-    }
-}
+
+
+
