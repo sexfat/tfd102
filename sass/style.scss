@@ -16,7 +16,7 @@ $h2: 40px;
 $h3: 36px;
 $h4: 24px;
 $h5: 18px;
-$bgc : #000000; //顏色
+$bgc : #2a005b; //顏色
 $fontcolor : rgb(255, 255, 255);
 $fontfamily : '微軟正黑'; // 字串
 $list : 10px 20px 10px; //list 
@@ -280,33 +280,12 @@ $w : 20;
 $imgname : slider1 slider2 slider3;
 
 
-// @include layout(full滿版 , 高度 )  如果不是滿版的話 帶數值進去即可
-@mixin layout($theme , $h) {
-    @if $theme == full {
-        width : 100vw;
-        height : $h;
-        display: block;
-        position: relative;
-    }@else {
-       width: $theme;
-       height: $h;
-       @include marginAuto(); 
-    }
-}
-
-// 樣板的色塊 @include theme(true or false) true 會反轉顏色（字體顏色 背景色）
-@mixin theme($light-theme: true){
-    @if $light-theme {
-        background-color: lighten($bgc , 100);
-        color: darken($fontcolor , 100);
-    }    
-}
 
 
 
 .v1 {
      @include layout(full ,400px);
-     @include theme(false);
+     @include theme(true);
      margin-bottom: 100px;
     
 }
