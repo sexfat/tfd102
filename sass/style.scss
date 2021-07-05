@@ -293,8 +293,6 @@ $imgname : slider1 slider2 slider3;
 
 
 
-
-
 .wrapper {
     .banner {
        @include layout(1200px, 500px);
@@ -306,5 +304,24 @@ $imgname : slider1 slider2 slider3;
             height: 100%;
 
         }
+    }
+}
+// $color: #f20
+// $a : 100px;
+// $m : 10px auto; list
+$null : null;
+
+$title_h :(
+   'h1' : 48px,
+   'h2' : 40px,
+   'h3' : 36px, 
+   'h4' : 30px, 
+   'h5' : 24px 
+); // map
+
+
+@each $k , $v in $title_h {
+    #{$k}{
+      font-size: $v;  
     }
 }
