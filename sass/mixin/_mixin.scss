@@ -185,6 +185,26 @@
 }
 
 
+@mixin moblie {
+    @media all and (max-width : $mobile ) {
+       @content 
+    }
+};
+
+@mixin tablet {
+    @media all and (min-width : $mobile + 1px ) and (max-width: $tablet) {
+       @content 
+    }
+};
+
+@mixin desktop {
+    @media all and (min-width : $tablet + 1px )  {
+       @content 
+    }
+}
+
+
+
 
 
 
