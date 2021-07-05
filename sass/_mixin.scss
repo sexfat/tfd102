@@ -121,6 +121,18 @@
 }
 
 
+// $img : box a b c bg; // list
+@mixin img($img, $style:jpg) {
+    @each $a in $img {
+        .#{$a} {
+            background-image: url('../img/#{$a}.#{$style}');
+            background-repeat: no-repeat;
+            @content;
+        }
+    }
+}
+
+
 
 
 
