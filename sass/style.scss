@@ -355,6 +355,11 @@ $null : null;
     box-shadow: 1px 1px 10px #333;
 }
 
+%border_1px {
+   border:1px solid #ff2a2a; 
+}
+
+
 
 .card-background_yellow {
     width: 300px ;
@@ -373,6 +378,12 @@ $null : null;
     @extend .blue;
     @extend .borderRaduis5;
     @extend .boxShadow; 
+    @extend %border_1px;
+}
+
+
+.banner {
+    @extend .yellow;
 }
 
 

@@ -483,7 +483,7 @@ h5 {
   background-color: #0008ff;
 }
 
-.yellow, .box-default, .box-warning, .card-background_yellow {
+.yellow, .box-default, .box-warning, .card-background_yellow, .banner {
   background-color: #f3ff0f;
 }
 
@@ -503,6 +503,10 @@ h5 {
 
 .boxShadow, .card-background_blue {
   box-shadow: 1px 1px 10px #333;
+}
+
+.card-background_blue {
+  border: 1px solid #ff2a2a;
 }
 
 .card-background_yellow {
