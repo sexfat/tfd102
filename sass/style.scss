@@ -221,43 +221,10 @@ $w : 20;
     }
 }
 
-// 運用
-@mixin push($num) {
-    @for $i from 1 through $num {
-        .push-left-#{$i} {
-            position: relative;
-            left: $i * 1px
-        }
-
-        .push-top-#{$i} {
-            position: relative;
-            top: $i * 1px
-        }
-
-        .push-bottom-#{$i} {
-            position: relative;
-            bottom: $i * 1px
-        }
-
-        .push-right-#{$i} {
-            position: relative;
-            right: $i * 1px
-        }
-    }
-}
 
 // @include push(100);
 
 
-@mixin pushall($num, $dir) {
-    @for $i from 1 through $num {
-        .push-#{$dir}-#{$i} {
-            position: relative;
-            #{$dir}: $i * 1px;
-            @content;
-        }
-    }
-}
 
 
 // @include pushall(100, top){
@@ -266,14 +233,6 @@ $w : 20;
 // @include pushall(200, bottom);
 
 // grid system
-@mixin grid($col){
-    @for $i from 1 through $col {
-        .col-#{$i}{
-          width: ( $i / $col ) * 100% ;
-          @content;
-        } 
-    }
-} 
 
 
 
