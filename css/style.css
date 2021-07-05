@@ -15,7 +15,7 @@ header {
 }
 
 body {
-  background-color: #2a005b;
+  background-color: #7700ff;
   color: white;
   font-size: 24px;
 }
@@ -477,5 +477,47 @@ h5 {
 
 .text-info:hover {
   background-color: #d2d6d5;
+}
+
+.blue, .card-background_blue {
+  background-color: #0008ff;
+}
+
+.yellow, .box-default, .box-warning, .card-background_yellow {
+  background-color: #f3ff0f;
+}
+
+.box-default {
+  width: 100px;
+  height: 100px;
+}
+
+.box-warning {
+  width: 300px;
+  height: 300px;
+}
+
+.borderRaduis5, .card-background_yellow, .card-background_blue {
+  border-radius: 5px;
+}
+
+.boxShadow, .card-background_blue {
+  box-shadow: 1px 1px 10px #333;
+}
+
+.card-background_yellow {
+  width: 300px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #000;
+}
+
+.card-background_blue {
+  width: 400px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #000;
 }
 /*# sourceMappingURL=style.css.map */

@@ -310,3 +310,71 @@ $null : null;
 
 ;
 @include colormap($color-map , #9da5a3);
+
+
+
+//  ========   @extend    ========
+
+
+
+.blue {
+   background-color: #0008ff; 
+}
+
+.yellow {
+    background-color: #f3ff0f;
+}
+
+
+@mixin yellow() {
+    background-color: #f3ff0f;
+}
+
+
+
+
+
+.box-default {
+   width: 100px;
+   height: 100px;
+//    @include yellow(); 
+   @extend .yellow
+}
+
+.box-warning{
+   width: 300px; 
+   height: 300px;
+   @extend .yellow;
+//    @include yellow(); 
+}
+.borderRaduis5 {
+    border-radius: 5px;
+}
+
+.boxShadow {
+    box-shadow: 1px 1px 10px #333;
+}
+
+
+.card-background_yellow {
+    width: 300px ;
+    height: 200px;
+    @include marginAuto();
+    color: #000;
+    @extend .yellow;
+    @extend .borderRaduis5; 
+}
+
+.card-background_blue {
+    width: 400px ;
+    height: 300px;
+    @include marginAuto();
+    color: #000;
+    @extend .blue;
+    @extend .borderRaduis5;
+    @extend .boxShadow; 
+}
+
+
+
+ 
