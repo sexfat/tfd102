@@ -78,6 +78,24 @@ function mincss(){
 }
 exports.css = mincss
 
+//同時執行 壓縮css js
+
+exports.alltask = parallel(ugjs, mincss);
+
+
+// 拷貝多個檔案
+
+
+function copy(){
+  //return src(['sass/*.css' ,'!sass/about.css'])// 排除
+  return src(['sass/*.*'  , 'sass/**/*.scss'])
+  .pipe(dest('css/all'))
+}
+
+exports.move = copy; 
+
+
+
 
 
 
