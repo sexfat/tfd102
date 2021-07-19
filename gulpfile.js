@@ -60,15 +60,15 @@ const rename = require('gulp-rename');
 
 function ugjs() {
     return src('js/scripts.js') //來源
-    .pipe(uglify()) //打包js
-    .pipe(rename({
-      extname: '.min.js'
-    })) // 換檔名
-    .pipe(dest('js/mini/')) // 目的地
+        .pipe(uglify()) //打包js
+        .pipe(rename({
+            extname: '.min.js'
+        })) // 換檔名
+        .pipe(dest('js/mini/')) // 目的地
 }
 
 
-exports.taskjs = ugjs 
+exports.taskjs = ugjs
 
 
 // 壓縮 css
@@ -76,13 +76,13 @@ exports.taskjs = ugjs
 const cleanCSS = require('gulp-clean-css');
 
 
-function mincss(){
-   return src('sass/style.css')
-   .pipe(cleanCSS({compatibility: 'ie10'}))
-   .pipe(rename({
-      extname: '.min.css'
-    })) // 換檔名
-   .pipe(dest('css/'))
+function mincss() {
+    return src('sass/style.css')
+        .pipe(cleanCSS({ compatibility: 'ie10' }))
+        .pipe(rename({
+            extname: '.min.css'
+        })) // 換檔名
+        .pipe(dest('css/'))
 }
 exports.css = mincss
 
@@ -94,18 +94,27 @@ exports.alltask = parallel(ugjs, mincss);
 // 拷貝多個檔案
 
 
-function copy(){
-  //return src(['sass/*.css' ,'!sass/about.css'])// 排除
-  return src(['sass/*.*'  , 'sass/**/*.scss'])
-  .pipe(dest('css/all'))
+function copy() {
+    //return src(['sass/*.css' ,'!sass/about.css'])// 排除
+    return src(['sass/*.*', 'sass/**/*.scss'])
+        .pipe(dest('css/all'))
 }
 
-exports.move = copy; 
+exports.move = copy;
+
+const fileinclude = require('gulp-file-include');
 
 
 
+function html() {
+    return src('*.html')
+    .pipe(fileinclude({
+        prefix: '@@',
+        basepath: '@file'
+    })).pipe(dest('dist'))
+}
 
-
+exports.h = html
 
 
 
