@@ -60,11 +60,27 @@ const uglify = require('gulp-uglify');
 function ugjs() {
     return src('js/scripts.js') //來源
     .pipe(uglify()) //打包js
-    .pipe(dest('js/minify/')) // 目的地
+    .pipe(dest('js/mini/')) // 目的地
 }
 
 
 exports.taskjs = ugjs 
+
+
+// 壓縮 css
+
+const cleanCSS = require('gulp-clean-css');
+
+function mincss(){
+   return src('sass/style.css')
+   .pipe(cleanCSS({compatibility: 'ie10'}))
+   .pipe(dest('css/'))
+}
+exports.css = mincss
+
+
+
+
 
 
 
