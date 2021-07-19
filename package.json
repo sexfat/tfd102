@@ -1,7 +1,7 @@
 {
   "name": "tfd102",
   "version": "1.0.0",
-  "description": "",
+  "description": "tfd102教學 gulp",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,15 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/sexfat/tfd102.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "bryan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sexfat/tfd102/issues"
   },
   "homepage": "https://github.com/sexfat/tfd102#readme",
-  "dependencies": {
-    "bootstrap": "^5.0.2",
-    "bootstrap-sass": "^3.4.1"
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }
