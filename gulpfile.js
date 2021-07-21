@@ -121,12 +121,15 @@ exports.h = html
 
 
 var sass = require('gulp-sass')(require('sass'));
+const sourcemaps = require('gulp-sourcemaps');
 
 
 
 function sassstyle(){
   return src('./src/sass/*.scss')
-       .pipe(sass.sync().on('error', sass.logError))
+       .pipe(sourcemaps.init())
+       .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
+       .pipe(sourcemaps.write())
        .pipe(dest('./dist/css'))
    }
 
