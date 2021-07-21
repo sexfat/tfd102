@@ -165,6 +165,25 @@ exports.watch = () =>
    watch(['./src/js/*.js'] , ugjs);
 
 
+// 壓縮圖片
+
+const imagemin = require('gulp-imagemin');
+
+function minify(){
+    return src('src/images/*.*')
+    .pipe(imagemin([
+        imagemin.mozjpeg({quality: 80, progressive: true}), // 壓縮品質      quality越低 -> 壓縮越大 -> 品質越差 
+        imagemin.optipng({optimizationLevel: 3}) // png
+    ]))
+    .pipe(dest('dist/images'))
+}
+
+exports.img = minify
+
+
+
+
+
 
 
 
