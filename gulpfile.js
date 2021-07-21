@@ -59,12 +59,12 @@ const rename = require('gulp-rename');
 
 
 function ugjs() {
-    return src('js/scripts.js') //來源
+    return src('./src/js/scripts.js') //來源
         .pipe(uglify()) //打包js
         .pipe(rename({
             extname: '.min.js'
         })) // 換檔名
-        .pipe(dest('js/mini/')) // 目的地
+        .pipe(dest('dist/js/mini/')) // 目的地
 }
 
 
@@ -77,12 +77,12 @@ const cleanCSS = require('gulp-clean-css');
 
 
 function mincss() {
-    return src('sass/style.css')
+    return src('./src/sass/style.css')
         .pipe(cleanCSS({ compatibility: 'ie10' }))
         .pipe(rename({
             extname: '.min.css'
         })) // 換檔名
-        .pipe(dest('css/'))
+        .pipe(dest('dist/css/'))
 }
 exports.css = mincss
 
@@ -96,8 +96,8 @@ exports.alltask = parallel(ugjs, mincss);
 
 function copy() {
     //return src(['sass/*.css' ,'!sass/about.css'])// 排除
-    return src(['sass/*.*', 'sass/**/*.scss'])
-        .pipe(dest('css/all'))
+    return src(['./src/sass/*.*', './src/sass/**/*.scss'])
+        .pipe(dest('dist/css/all'))
 }
 
 exports.move = copy;
@@ -107,7 +107,7 @@ const fileinclude = require('gulp-file-include');
 
 
 function html() {
-    return src('*.html')
+    return src('./src/*.html')
     .pipe(fileinclude({
         prefix: '@@',
         basepath: '@file'
