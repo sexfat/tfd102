@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sexfat/tfd102#readme",
   "devDependencies": {
+    "@vue/cli": "^4.5.13",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-file-include": "^2.3.0",
