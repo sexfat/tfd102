@@ -108,10 +108,10 @@ const fileinclude = require('gulp-file-include');
 
 function html() {
     return src('./src/*.html')
-    .pipe(fileinclude({
-        prefix: '@@',
-        basepath: '@file'
-    })).pipe(dest('dist'))
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        })).pipe(dest('dist'))
 }
 
 exports.h = html
@@ -125,19 +125,19 @@ const sourcemaps = require('gulp-sourcemaps');
 
 
 
-function sassmap(){
-  return src('./src/sass/*.scss')
-       .pipe(sourcemaps.init())
-       .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
-       .pipe(sourcemaps.write())
-       .pipe(dest('./dist/css'))
-   }
+function sassmap() {
+    return src('./src/sass/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(sourcemaps.write())
+        .pipe(dest('./dist/css'))
+}
 
-function sassstyle(){
-  return src('./src/sass/*.scss')
-       .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
-       .pipe(dest('./dist/css'))
-   }
+function sassstyle() {
+    return src('./src/sass/*.scss')
+        .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(dest('./dist/css'))
+}
 
 
 exports.style_online = sassstyle // 上線
@@ -160,22 +160,22 @@ exports.style = sassmap // dev
 
 
 exports.watch = () =>
-   watch(['./src/sass/*.scss' , './src/sass/**/*.scss'] , sassmap);
-   watch(['./src/*.html' , './src/**/*.html'] , html);
-   watch(['./src/js/*.js'] , ugjs);
+    watch(['./src/sass/*.scss', './src/sass/**/*.scss'], sassmap);
+watch(['./src/*.html', './src/**/*.html'], html);
+watch(['./src/js/*.js'], ugjs);
 
 
 // 壓縮圖片
 
 const imagemin = require('gulp-imagemin');
 
-function minify(){
+function minify() {
     return src('src/images/*.*')
-    .pipe(imagemin([
-        imagemin.mozjpeg({quality: 80, progressive: true}), // 壓縮品質      quality越低 -> 壓縮越大 -> 品質越差 
-        imagemin.optipng({optimizationLevel: 3}) // png
-    ]))
-    .pipe(dest('dist/images'))
+        .pipe(imagemin([
+            imagemin.mozjpeg({ quality: 80, progressive: true }), // 壓縮品質      quality越低 -> 壓縮越大 -> 品質越差 
+            imagemin.optipng({ optimizationLevel: 3 }) // png
+        ]))
+        .pipe(dest('dist/images'))
 }
 
 exports.img = minify
@@ -197,6 +197,9 @@ function browser(done) {
         },
         port: 3000
     });
+    watch(['./src/sass/*.scss', './src/sass/**/*.scss'], sassmap).on('change' , reload);
+    watch(['./src/*.html', './src/**/*.html'], html).on('change' , reload);
+    watch(['./src/js/*.js'], ugjs).on('change' , reload);
     done();
 }
 
