@@ -182,6 +182,28 @@ exports.img = minify
 
 
 
+//  同步瀏覽器
+
+
+const browserSync = require('browser-sync');
+const reload = browserSync.reload;
+
+
+function browser(done) {
+    browserSync.init({
+        server: {
+            baseDir: "./dist",
+            index: "index.html"
+        },
+        port: 3000
+    });
+    done();
+}
+
+exports.bsync = browser
+
+
+
 
 
 

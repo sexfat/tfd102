@@ -4,10 +4,10 @@
   "description": "tfd102教學 gulp",
   "main": "index.js",
   "scripts": {
-     "安裝套件" : "npm install",
-      "壓縮圖片" : "gulp img",
-      "監看"    : "gulp watch"
-   },
+    "安裝套件": "npm install",
+    "壓縮圖片": "gulp img",
+    "監看": "gulp watch"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sexfat/tfd102.git"
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/sexfat/tfd102#readme",
   "devDependencies": {
     "@vue/cli": "^4.5.13",
+    "browser-sync": "^2.27.4",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-file-include": "^2.3.0",
