@@ -120,12 +120,12 @@ exports.h = html
 // sass gulp 
 
 
-var sass = require('gulp-sass')(require('sass'));
+const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 
 
 
-function sassstyle(){
+function sassmap(){
   return src('./src/sass/*.scss')
        .pipe(sourcemaps.init())
        .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
@@ -133,13 +133,32 @@ function sassstyle(){
        .pipe(dest('./dist/css'))
    }
 
-exports.style = sassstyle
+function sassstyle(){
+  return src('./src/sass/*.scss')
+       .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
+       .pipe(dest('./dist/css'))
+   }
+
+
+exports.style_online = sassstyle // 上線
+exports.style = sassmap // dev
 
 // arrow
 // exports.style = () => 
 //         src('./src/sass/*.scss')
 //        .pipe(sass.sync().on('error', sass.logError))
 //        .pipe(dest('./dist/css'))
+
+
+// function watch(){
+//    watch(['./src/sass/*.scss' , './src/sass/**/*.scss'] , sassmap);
+//    watch(['./src/*.html' , './src/**/*.html'] , html);
+// }
+
+exports.watch = () =>
+   watch(['./src/sass/*.scss' , './src/sass/**/*.scss'] , sassmap);
+   watch(['./src/*.html' , './src/**/*.html'] , html);
+
 
 
 
