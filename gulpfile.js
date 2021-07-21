@@ -117,6 +117,27 @@ function html() {
 exports.h = html
 
 
+// sass gulp 
+
+
+var sass = require('gulp-sass')(require('sass'));
+
+
+
+function sassstyle(){
+  return src('./src/sass/*.scss')
+       .pipe(sass.sync().on('error', sass.logError))
+       .pipe(dest('./dist/css'))
+   }
+
+exports.style = sassstyle
+
+// arrow
+// exports.style = () => 
+//         src('./src/sass/*.scss')
+//        .pipe(sass.sync().on('error', sass.logError))
+//        .pipe(dest('./dist/css'))
+
 
 
 
