@@ -150,14 +150,19 @@ exports.style = sassmap // dev
 //        .pipe(dest('./dist/css'))
 
 
-// function watch(){
+// function watchs(){
 //    watch(['./src/sass/*.scss' , './src/sass/**/*.scss'] , sassmap);
 //    watch(['./src/*.html' , './src/**/*.html'] , html);
 // }
 
+// exports.w = watchs
+
+
+
 exports.watch = () =>
    watch(['./src/sass/*.scss' , './src/sass/**/*.scss'] , sassmap);
    watch(['./src/*.html' , './src/**/*.html'] , html);
+   watch(['./src/js/*.js'] , ugjs);
 
 
 
