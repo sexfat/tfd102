@@ -33,5 +33,5 @@ module.exports = {
         })
     ],           // 對應的插件
     //devServer: {},           // 服務器配置
-    //mode: 'development'      // 開發模式配置
+    mode: 'production'      // 開發模式配置 development  production
 }
