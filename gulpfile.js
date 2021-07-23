@@ -52,6 +52,9 @@ exports.tasks = series(missionA, missionB, parallel(missionC, missionD));
 exports.sync = parallel(missionA, missionB);
 
 
+//======== 任務套件=====
+
+
 // uglify js
 
 const uglify = require('gulp-uglify');
@@ -69,6 +72,8 @@ function ugjs() {
         .pipe(dest('dist/js/mini/')) // 目的地
 }
 
+
+// 檢查js 語法
 function lint(){
     return src('./src/js/*.js') //來源
     .pipe(jshint())
@@ -112,10 +117,9 @@ function copy() {
 
 exports.move = copy;
 
+// html template
+
 const fileinclude = require('gulp-file-include');
-
-
-
 function html() {
     return src('./src/*.html')
         .pipe(fileinclude({
@@ -168,11 +172,12 @@ exports.style = sassmap // dev
 // exports.w = watchs
 
 
-
+// 監看
 exports.watch = () =>
     watch(['./src/sass/*.scss', './src/sass/**/*.scss'], sassmap);
     watch(['./src/*.html', './src/**/*.html'], html);
     watch(['./src/js/*.js'], ugjs);
+
 
 
 // 壓縮圖片
@@ -217,9 +222,9 @@ function babel5() {
 
 exports.es5 = babel5;
 
+
+
 // 清除舊檔案 
-
-
 const clean = require('gulp-clean');
 
 function clear() {
@@ -233,8 +238,6 @@ exports.clean = clear
 
 
 //  同步瀏覽器 開發
-
-
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
 
@@ -258,7 +261,7 @@ function browser(done) {
 exports.default = browser;
 
 //  打包
-exports.packages = series(clear, minify, mincss , ugjs , prefixer);
+exports.packages = series(clear,html, sassmap ,prefixer ,mincss, minify, ugjs);
 
 
 
