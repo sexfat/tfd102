@@ -1,7 +1,7 @@
 //css 資源輸入
 import './css/style.css';
-import './css/header.css';
-import './css/footer.css';
+// import './css/header.css';
+// import './css/footer.css';
 
 // gsap 注入
 import { TweenMax } from 'gsap';
