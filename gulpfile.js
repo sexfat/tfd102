@@ -261,7 +261,7 @@ function browser(done) {
 exports.default = browser;
 
 //  打包
-exports.packages = series(clear,html, sassmap ,prefixer ,mincss, minify, ugjs);
+exports.packages = series(clear,html, sassmap , mincss , prefixer , minify, ugjs);
 
 
 
