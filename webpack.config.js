@@ -1,24 +1,33 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/app.js',               // 入口文件
+    entry: {index : './src/app.js'},               // 入口文件
     output: {
        path : path.resolve(__dirname ,'dist'),
        filename : 'bundle.js'
     },// 出口文件
-    module: {
+   module: {
         rules: [{
             // 格式
             test: /\.css$/,
             //順序是由下到上 css > style
-            use: [
-                'style-loader',
+            use: [{
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                  publicPath: './dist'
+                }
+              },
+                //'style-loader', 會跟原本的衝突 
                 'css-loader'
             ],
         }]
 
     },              // 處裡對應模組
-    //plugins: [],             // 對應的插件
+   plugins: [
+        new MiniCssExtractPlugin({
+            filename: "./[name]_style.css"
+        })
+    ],           // 對應的插件
     //devServer: {},           // 服務器配置
     //mode: 'development'      // 開發模式配置
 }
