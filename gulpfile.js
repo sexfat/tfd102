@@ -72,7 +72,7 @@ function ugjs() {
 function lint(){
     return src('./src/js/*.js') //來源
     .pipe(jshint())
-    // .pipe(jshint.reporter('YOUR_REPORTER_HERE'));
+    // .pipe(jshint.reporter('fail'))
 }
 
 
@@ -204,6 +204,24 @@ function prefixer(){
         .pipe(dest('./dist/css/prefixer/'))
 };
 
+// js es6 -> es5
+const babel = require('gulp-babel');
+
+function babel5() {
+    return src('src/js/*.js')
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(dest('dist/js'));
+}
+
+
+
+
+
+
+
+
 //  同步瀏覽器 開發
 
 
@@ -225,10 +243,12 @@ function browser(done) {
     done();
 }
 
+
+//開發
 exports.default = browser;
 
-exports.packages = series(minify, mincss , prefixer);
-
+//  打包
+exports.packages = series(minify, mincss , ugjs , prefixer);
 
 
 
