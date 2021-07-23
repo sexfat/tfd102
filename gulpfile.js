@@ -215,6 +215,8 @@ function babel5() {
         .pipe(dest('dist/js'));
 }
 
+exports.es5 = babel5;
+
 
 
 
