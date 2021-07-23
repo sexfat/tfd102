@@ -5,3 +5,12 @@ body {
 h1 {
     color: lawngreen;
 }
+
+.box {
+
+   width: 80px;
+   height: 80px;
+   border-radius: 5px;
+   background-color: rgb(10, 174, 67);
+
+}   
