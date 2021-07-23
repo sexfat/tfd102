@@ -217,10 +217,18 @@ function babel5() {
 
 exports.es5 = babel5;
 
+// 清除舊檔案 
 
 
+const clean = require('gulp-clean');
+
+function clear() {
+  return src('dist' ,{ read: false ,allowEmpty: true })//不去讀檔案結構，增加刪除效率  / allowEmpty : 允許刪除空的檔案
+  .pipe(clean({force: true})); //強制刪除檔案 
+}
 
 
+exports.clean = clear
 
 
 
@@ -250,7 +258,7 @@ function browser(done) {
 exports.default = browser;
 
 //  打包
-exports.packages = series(minify, mincss , ugjs , prefixer);
+exports.packages = series(clear, minify, mincss , ugjs , prefixer);
 
 
 
