@@ -56,6 +56,8 @@ exports.sync = parallel(missionA, missionB);
 
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
+// 檢查js 語法
+const jshint = require('gulp-jshint');
 
 
 function ugjs() {
@@ -66,6 +68,14 @@ function ugjs() {
         })) // 換檔名
         .pipe(dest('dist/js/mini/')) // 目的地
 }
+
+function lint(){
+    return src('./src/js/*.js') //來源
+    .pipe(jshint())
+    // .pipe(jshint.reporter('YOUR_REPORTER_HERE'));
+}
+
+
 
 
 exports.taskjs = ugjs
@@ -211,7 +221,7 @@ function browser(done) {
     });
       watch(['./src/sass/*.scss', './src/sass/**/*.scss'], sassmap).on('change' , reload);
       watch(['./src/*.html', './src/**/*.html'], html).on('change' , reload);
-      watch(['./src/js/*.js'], ugjs).on('change' , reload);
+      watch(['./src/js/*.js'], lint).on('change' , reload);
     done();
 }
 
