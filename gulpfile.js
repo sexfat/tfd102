@@ -77,7 +77,7 @@ const cleanCSS = require('gulp-clean-css');
 
 
 function mincss() {
-    return src('./src/sass/style.css')
+    return src('./dist/css/*.css')
         .pipe(cleanCSS({ compatibility: 'ie10' }))
         .pipe(rename({
             extname: '.min.css'
@@ -161,8 +161,8 @@ exports.style = sassmap // dev
 
 exports.watch = () =>
     watch(['./src/sass/*.scss', './src/sass/**/*.scss'], sassmap);
-watch(['./src/*.html', './src/**/*.html'], html);
-watch(['./src/js/*.js'], ugjs);
+    watch(['./src/*.html', './src/**/*.html'], html);
+    watch(['./src/js/*.js'], ugjs);
 
 
 // 壓縮圖片
@@ -181,8 +181,20 @@ function minify() {
 exports.img = minify
 
 
+// 解決 css 跨瀏覽器
 
-//  同步瀏覽器
+const autoprefixer = require('gulp-autoprefixer');
+
+
+function prefixer(){
+     src('./dist/css/*.min.css')
+        .pipe(autoprefixer({
+            cascade: false
+        }))
+        .pipe(dest('./dist/css/prefixer/'))
+};
+
+//  同步瀏覽器 開發
 
 
 const browserSync = require('browser-sync');
@@ -197,13 +209,18 @@ function browser(done) {
         },
         port: 3000
     });
-    watch(['./src/sass/*.scss', './src/sass/**/*.scss'], sassmap).on('change' , reload);
-    watch(['./src/*.html', './src/**/*.html'], html).on('change' , reload);
-    watch(['./src/js/*.js'], ugjs).on('change' , reload);
+      watch(['./src/sass/*.scss', './src/sass/**/*.scss'], sassmap).on('change' , reload);
+      watch(['./src/*.html', './src/**/*.html'], html).on('change' , reload);
+      watch(['./src/js/*.js'], ugjs).on('change' , reload);
     done();
 }
 
-exports.bsync = browser
+exports.default = browser;
+
+exports.packages = series(minify, mincss , prefixer);
+
+
+
 
 
 
