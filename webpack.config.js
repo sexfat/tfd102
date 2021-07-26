@@ -6,12 +6,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: { 
-      main: './src/app.js', //chunks
-      about : './src/app2.js' // chunks
+      main: './src/js/app.js', //chunks
+      about : './src/js/app2.js' // chunks
     },               // 入口文件
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name]-bundle.js'
+        path: path.resolve(__dirname, 'dist/'),
+        filename: 'js/[name]-bundle.js'
     },// 出口文件
     module: {
         rules: [{
@@ -33,7 +33,7 @@ module.exports = {
     },              // 處裡對應模組
   plugins: [
         new MiniCssExtractPlugin({
-            filename: "./[name].css"
+            filename: "./css/[name].css"
         }),
         new HtmlWebpackPlugin({
             chunks : ['main'],  //選擇注入資源 chunk
