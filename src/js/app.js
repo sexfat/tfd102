@@ -6,11 +6,11 @@ import './../sass/style.scss';
 import { TweenMax } from 'gsap';
 
 // jquery
-import $ from 'jquery';
+// import $ from 'jquery';
 
 
 
-$('body').css('background-color' , 'yellow');
+$('body').css('background-color' , 'green');
 
 
 TweenMax.to('.box' , 1 , {
