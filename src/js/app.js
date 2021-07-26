@@ -1,5 +1,5 @@
 //css 資源輸入
-import './sass/style.scss';
+import './../sass/style.scss';
 
 
 // gsap 注入
