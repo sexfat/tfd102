@@ -1,11 +1,20 @@
+@import 'mixin';
+@import './../../node_modules/bootstrap/scss/bootstrap.scss'; // sass 打包
+
 body {
-   margin: 0;
-   padding: 0;
-   font-size: 100px;
-    h1 {
-       font-size: 20px;
-       font-weight: bold;
-    }
+    background-color: rgb(200, 112, 255);
 }
 
+h1 {
+    color: lawngreen;
+}
+
+.box {
+
+   width: 80px;
+   height: 80px;
+   border-radius: 5px;
+   background-color: rgb(10, 174, 67);
+
+}   
 

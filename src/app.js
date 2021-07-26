@@ -10,7 +10,7 @@ import $ from 'jquery';
 
 
 
-$('body').css('background-color' , 'green');
+$('body').css('background-color' , 'yellow');
 
 
 TweenMax.to('.box' , 1 , {
