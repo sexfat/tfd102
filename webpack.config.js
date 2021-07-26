@@ -2,6 +2,14 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const {
+    CleanWebpackPlugin
+} = require('clean-webpack-plugin');
+
+
+
+
+
 
 
 module.exports = {
@@ -32,6 +40,8 @@ module.exports = {
 
     },              // 處裡對應模組
   plugins: [
+        //清理舊的檔案
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "./css/[name].css"
         }),
@@ -46,9 +56,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             chunks : ['about'],  //選擇注入資源 chunk
             inject  : 'head', //預設<body> js </body>  head or body
-            template : './src/about.html',
+            template : './src/aboutus.html',
             //來源
-            filename : 'about.html'
+            filename : 'aboutus.html'
             // 目的地
         }),
 
