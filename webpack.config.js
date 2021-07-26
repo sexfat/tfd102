@@ -45,7 +45,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             chunks : ['about'],  //選擇注入資源 chunk
-            inject  : 'body', //預設<body> js </body>  head or body
+            inject  : 'head', //預設<body> js </body>  head or body
             template : './src/about.html',
             //來源
             filename : 'about.html'
