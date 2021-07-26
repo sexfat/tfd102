@@ -17,6 +17,7 @@ TweenMax.to('.box' , 1 , {
  x: 400,
  rotation : 360,
  repeat: -1,
+ scale: 2,
  yoyo: true
 })
 

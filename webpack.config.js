@@ -53,6 +53,13 @@ module.exports = {
         }),
 
     ], 
-    //devServer: {},           // 服務器配置
-    mode: 'development'      // 開發模式配置 development  production
+     devServer: {
+        contentBase: './dist',
+        host: 'localhost',
+        port: 3300,
+        // 指定首頁檔案
+        index: 'index.html',
+        open: true
+    },         // 服務器配置
+    mode: 'production'      // 開發模式配置 development  production
 }
